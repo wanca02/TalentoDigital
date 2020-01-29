@@ -1,0 +1,23 @@
+*{
+  text-align: center;
+  margin: 0 auto;
+  font-size: 10px;
+}
+.back-container{
+  background-color: rgba(192, 192, 192, 0.445);
+}
+.blue{
+  background-color: rgba(0, 0, 255, 0.548);
+}
+.pink{
+  background-color: rgba(255, 136, 156, 0.822);
+}
+.orange{
+  background-color: rgba(255, 166, 0, 0.575);
+}
+.green{
+  background-color: rgba(2, 161, 2, 0.603);
+}
+.mg-top{
+  margin-top: 20px;
+}
