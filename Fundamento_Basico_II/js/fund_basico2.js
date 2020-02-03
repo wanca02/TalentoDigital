@@ -89,7 +89,6 @@ function incre_segundo(p) {
   return p;
 }
 function long_previas(p) {
-  var a = [];
   for (var i = p.length-1; i >=1; i--) {
     p[i]=p[i-1].length;
   }
