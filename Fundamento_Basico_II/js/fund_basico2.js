@@ -13,7 +13,9 @@ function imprime_retorna(p) {
     if(mayor<p[i]){
       mayor=p[i];
     }else{
-      menor=p[i]
+      if(menor>p[i]){
+        menor=p[i];
+      }
     }
   }
   console.log(menor);
