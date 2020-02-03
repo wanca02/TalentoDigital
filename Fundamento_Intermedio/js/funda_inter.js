@@ -12,11 +12,21 @@ function factorial(n) {
   }
   return fac;
 }
-function fibonacci(n) {
-  if (n==0 || n==1) {
-    return n;
+function fibonacci_itera(n){
+  var a = 1, b = 0, temp;
+  while (n >= 0){
+    temp = a;
+    a = a + b;
+    b = temp;
+    n--;
   }
-  return fibonacci(n-2) + fibonacci(n-1);
+  return b;
+}
+function fibonacci_rec(n) {
+  if (n<=1) {
+    return 1;
+  }
+  return fibonacci_rec(n-1) + fibonacci_rec(n-2);
 }
 function array_penultimo(p) {
   if (p.length<3) {
@@ -65,8 +75,8 @@ console.log(sigma(3));
 console.log("\nFUNCIÓN 2: factorial(n)");
 console.log(factorial(5));
 
-console.log("\nFUNCIÓN 3: fibonacci(n)");
-console.log(fibonacci(6));
+console.log("\nFUNCIÓN 3: fibonacci_itera(n)");
+console.log(fibonacci_itera(6));
 
 console.log("\nFUNCIÓN 4: array_penultimo(n)");
 console.log(array_penultimo([1,2,3]));
@@ -79,3 +89,6 @@ console.log(array_segundo_my([5,2,3,6,4,9,7]));
 
 console.log("\nFUNCIÓN 7: doble_problema(x)");
 console.log(doble_problema([4,"Ulysses", 42, false]));
+
+console.log("\nFUNCIÓN 8: fibonacci_rec(n)");
+console.log(fibonacci_rec(6));
