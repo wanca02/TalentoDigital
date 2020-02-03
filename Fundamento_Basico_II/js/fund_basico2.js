@@ -120,17 +120,6 @@ function pers_negativa(p) {
   }
   return a;
 }
-function pers_negativa(p) {
-  var a = new Array(p.length);
-  for (var i = 0; i < p.length; i++) {
-    if (p[i]>0) {
-      a[i]=p[i]*-1;
-    }else{
-      a[i]=p[i];
-    }
-  }
-  return a;
-}
 function hambriento(p) {
   var cc=0;
   for (var i = 0; i < p.length; i++) {
