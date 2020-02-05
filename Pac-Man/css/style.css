@@ -1,0 +1,80 @@
+body{
+  background-color: black;
+}
+div#world{
+  position: relative;
+}
+div.row div{
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  display: inline-block;
+}
+div.brick{
+  background-color: blue;
+}
+div.coin{
+  background-image: url("../img/coin.gif");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+div.cherry{
+  background-image: url("../img/cherry.png");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+div#ghost{
+  background-image: url("../img/ghost.gif");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transform: rotate(0deg);
+}
+div#pacman1{
+  background-image: url("../img/pacman.gif");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transform: rotate(0deg);
+}
+div#pacman2{
+  background-image: url("../img/pacman.gif");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transform: rotate(180deg);
+}
+div.score{
+  border: 1px solid whitesmoke;
+  width: 110px;
+  height: 50px;
+  color: aliceblue;
+  padding: 7px;
+  text-align: center;
+  position: absolute;
+  top: 30px;
+  right:40px;
+}
+
+div.life{
+  border: 1px solid whitesmoke;
+  width: 100px;
+  height: 50px;
+  color: aliceblue;
+  padding: 7px;
+  text-align: center;
+  position: absolute;
+  top: 100px;
+  right:40px;
+}
