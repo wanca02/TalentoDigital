@@ -1,6 +1,7 @@
 var world=[];
 var fil=20;
 var col=10;
+var flag=1;
 for (var i = 0; i < fil; i++) {
   var a = new Array(col);
   a[0]=2;
@@ -128,12 +129,19 @@ function moveGhost() {
     ghost.y+=0;
   }
 }
-displayWorld();
-displayPacman();
-displayGhost();
-displayScore();
-displayLife();
-var flag=1;
+
+function gamePlay() {
+  scoreCount();
+  lifeCount();
+  displayLife();
+  displayScore();
+  displayWorld();
+  displayPacman();
+  displayGhost();
+  moveGhost();
+}
+setInterval(gamePlay,150);
+
 document.onkeydown=function(e) {
   var img = document.getElementById('pacman1');
   if (e.keyCode==37 && world[(((pacman[0].y-35)/_y)+1)][(((pacman[0].x-32)/_x)+1)-1]!=2) {
@@ -173,13 +181,5 @@ document.onkeydown=function(e) {
   }
   //console.log(pacman[1]);
   //console.log(((pacman[1].y-35)/_y)+1,parseInt((pacman[1].x)/_x)+1)
-  scoreCount();
-  lifeCount();
-  displayLife();
-  displayScore();
-  displayWorld();
-  displayPacman();
-  displayGhost();
-  moveGhost();
 }
 
