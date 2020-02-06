@@ -107,7 +107,7 @@ function lifeCount() {
     } else if (pacman[i].x<ghost.x || pacman[i].y < ghost.y && flag==0) {
       flag=1; 
     }
-    if (life[i]==0 || life[i]==0) {
+    if (life[i]==0) {
       life[i]=0;
       flag=0;
       alert("Game Over");
