@@ -179,7 +179,5 @@ document.onkeydown=function(e) {
     pacman[1].y+=_y;
     img.setAttribute('style','transform: rotate(90deg);')
   }
-  //console.log(pacman[1]);
-  //console.log(((pacman[1].y-35)/_y)+1,parseInt((pacman[1].x)/_x)+1)
 }
 
