@@ -115,13 +115,14 @@ function lifeCount() {
   }
 }
 function moveGhost() {
+  var g = document.getElementById('ghost');
   var move=Math.floor(Math.random()*5);
   if (move==1 && world[parseInt((ghost.y/_y))-1][parseInt((ghost.x/_x))] !=2) {
     ghost.y-=_y;//arriba
   }else if (move==2 && world[parseInt((ghost.y/_y))+1][parseInt((ghost.x/_x))] !=2) {
     ghost.y+=_y;//abajo
   }else if (move==3 && world[parseInt((ghost.y/_y))][parseInt((ghost.x/_x))+1] !=2) {
-    ghost.x+=_x;//left
+    ghost.x+=_x;//left    
   }else if (move==4 && world[parseInt((ghost.y/_y))][parseInt((ghost.x/_x))-1] !=2) {
     ghost.x-=_x;//right
   }else if (move==0) {
@@ -129,18 +130,17 @@ function moveGhost() {
     ghost.y+=0;
   }
 }
+displayLife();
+displayScore();
+displayWorld();
+displayPacman();
+displayGhost();
 
-function gamePlay() {
-  scoreCount();
-  lifeCount();
-  displayLife();
-  displayScore();
-  displayWorld();
-  displayPacman();
-  displayGhost();
+function gamePlay(){
   moveGhost();
+  displayGhost();
 }
-setInterval(gamePlay,150);
+setInterval(gamePlay,90);
 
 document.onkeydown=function(e) {
   var img = document.getElementById('pacman1');
@@ -179,5 +179,11 @@ document.onkeydown=function(e) {
     pacman[1].y+=_y;
     img.setAttribute('style','transform: rotate(90deg);')
   }
+  scoreCount();
+  lifeCount();
+  displayLife();
+  displayScore();
+  displayWorld();
+  displayPacman();
 }
 
