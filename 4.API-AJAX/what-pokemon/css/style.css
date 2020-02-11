@@ -1,0 +1,11 @@
+.pokemon-view{
+  border: 3px crimson solid;
+  height: fit-content;
+  width: fit-content;
+}
+.pokemon-view h1{
+  text-align: center;
+}
+.pokemon-view img{
+  text-align: center;
+}
