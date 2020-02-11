@@ -6,7 +6,7 @@ function Main() {
   $("button").click(Aparecer);
 }
 function Desaparecer() {
-  $(event.target).hide()
+  $(this).hide(); //event.target
 }
 function Aparecer() {
   $(".container div img").show();
