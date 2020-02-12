@@ -1,0 +1,9 @@
+img{
+  width: 200px;
+  height: 170px;
+}
+.row div img{
+  border: 4px crimson solid;
+  border-radius: 5%;
+  margin-top: 10px;
+}
