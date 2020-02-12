@@ -1,7 +1,6 @@
 $(document).ready(Main);
 
 function Main() {
-  //$(".row:nth-child(2)").hide();
   $("img").click(getData);
 }
 function getData() {
