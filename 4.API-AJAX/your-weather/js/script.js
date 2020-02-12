@@ -24,9 +24,11 @@ function getlistData(){
   },"json");
 }
 function setData(res) {
-  console.log(res);
+  //console.log(res);
   console.log(res.weather[0].main);
+  console.log(res.weather[0].description);
   $(".container div label:last-child").text(res.main.temp);
-  $(".container img").attr("src","./img/"+res.weather[0].description+".png");
+  $(".container img").attr("src","./img/"+res.weather[0].main+".png");
   $(".container img").show();""
+  $(".container h4").text(res.weather[0].description);
 }
