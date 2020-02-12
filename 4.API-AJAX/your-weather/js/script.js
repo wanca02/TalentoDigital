@@ -5,7 +5,7 @@ function Main() {
   $("#btn").click(getNewData);
 }
 function getNewData() {
-  var url="http://api.openweathermap.org/data/2.5/box/city?bbox=-70,-54,-70,-18,10&units=metric&appid="+api_key
+  var url="http://api.openweathermap.org/data/2.5/box/city?bbox=-70,-18,-71,-54,10&units=metric&appid="+api_key
   $.get(url, function(res){
     console.log(res)
   }, 'json');
@@ -25,5 +25,8 @@ function getlistData(){
 }
 function setData(res) {
   console.log(res);
+  console.log(res.weather[0].main);
   $(".container div label:last-child").text(res.main.temp);
+  $(".container img").attr("src","./img/"+res.weather[0].description+".png");
+  $(".container img").show();""
 }
