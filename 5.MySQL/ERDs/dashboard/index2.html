@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Control :3</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!--<link href="./css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://getbootstrap.com/1.4.0/assets/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  -->
+  <link href="./bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="./bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+</head>
+<body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">Project name</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+  <div id="page-1" class="container mg-t">
+    <!-- Main hero unit for a primary marketing message or call to action -->
+    <div class="hero-unit">
+      <h1>Bienvenido a mi Page!</h1>
+      <p>Vestibulum id ligula porta felis euismod semper. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+      <p><a class="btn primary large">Learn more »</a></p>
+    </div>
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="span-one-third">
+        <h2>Heading</h2>
+        <p>Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+        <p><a class="btn" href="#">View details »</a></p>
+      </div>
+      <div class="span-one-third">
+        <h2>Heading</h2>
+         <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn" href="#">View details »</a></p>
+     </div>
+      <div class="span-one-third">
+        <h2>Heading</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn" href="#">View details »</a></p>
+      </div>
+    </div>
+    <footer>
+      <p>© Company 2011</p>
+    </footer>
+  </div>
+  <div id="page-2" class="container mg-t" style="display: none;">
+    <div class="row">
+      <div class="span6 offset5">
+        <form action="#">
+          <fieldset>
+            <div class="#">
+              <div class="clearfix">
+                <label for="email">Email:</label>
+                <div class="input">
+                  <div class="input-prepend">
+                    <input type="email" class="medium" id="email" name="email" size="16" type="text">
+                  </div>
+                  <span class="help-block">ejemplo@dominio.cl</span>
+                </div>
+              </div>
+              <div class="clearfix">
+                <label for="password">Password:</label>
+                <div class="input">
+                  <input type="password" class="medium" id="password" name="password" size="30" type="text">
+                </div>
+              </div>
+              <div class="actions">
+                <input type="submit" class="btn primary" value="Ingresar">
+                <button type="reset" class="btn">Cancel</button>
+              </div>
+              <div class="clearfix">
+                <a id="regi-link" href="#">No tienes cuenta? Registraquí aquí</a>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="page-3" class="container" style="display: none;">
+    <div class="row justify-content-center mt-4">
+      <div class="col-7 jumbotron">
+        <form>
+          <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Email:</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="name" class="col-sm-2 col-form-label">Nombre:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter Nombre">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="last" class="col-sm-2 col-form-label">Apellido:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="last" aria-describedby="lastHelp" placeholder="Enter Apellido">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="confirPassword" class="col-sm-2 col-form-label">Confirmar Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="confirPassword" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group row justify-content-end">
+            <div class="col-sm-2">
+              <button type="submit" class="btn btn-success">Registrar</button>
+            </div>
+            <div class="col-sm-3">
+              <button type="button" id="cancelRegis" class="btn btn-danger">Cancelar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+  </div>
+</body>
+<footer>
+  <script src="./js/jquery.js"></script>
+  <script src="./bootstrap/js/jquery.js"></script>
+  <script src="./bootstrap/js/bootstrap-transition.js"></script>
+  <script src="./bootstrap/js/jquery.js"></script>
+  <script src="./bootstrap/js/bootstrap-alert.js"></script>
+  <script src="./bootstrap/js/bootstrap-modal.js"></script>
+  <script src="./bootstrap/js/bootstrap-dropdown.js"></script>
+  <script src="./bootstrap/js/bootstrap-scrollspy.js"></script>
+  <script src="./bootstrap/js/bootstrap-tab.js"></script>
+  <script src="./bootstrap/js/bootstrap-tooltip.js"></script>
+  <script src="./bootstrap/js/bootstrap-popover.js"></script>
+  <script src="./bootstrap/js/bootstrap-button.js"></script>
+  <script src="./bootstrap/js/bootstrap-collapse.js"></script>
+  <script src="./bootstrap/js/bootstrap-carousel.js"></script>
+  <script src="./bootstrap/js/bootstrap-typeahead.js"></script>
+  <script src="./bootstrap/js/bootstrap.js"></script>
+  <script src="./bootstrap/js/bootstrap.min.js"></script>
+  <script src="./js/script.js"></script>
+</footer>
+</html>

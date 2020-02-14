@@ -1,0 +1,1 @@
+delete from libro where id=4;
