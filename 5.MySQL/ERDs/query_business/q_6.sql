@@ -1,4 +1,7 @@
-select concat(cl.first_name," ",cl.last_name) as _name,count(le.leads_id) from clients as cl
+select 
+	concat(cl.first_name," ",cl.last_name) as _name,
+	count(le.leads_id) as no_leads
+from clients as cl
 inner join sites as si
 on cl.client_id=si.client_id
 inner join leads as le
