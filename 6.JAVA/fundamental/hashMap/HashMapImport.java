@@ -4,8 +4,9 @@ import java.util.HashMap;
 import java.util.Set;
 
 public class HashMapImport {
-	public static void main(String[] args) {
-        HashMap<String, String> userMap = new HashMap<String, String>();
+	HashMap<String, String> userMap = new HashMap<String, String>();
+	public void createTrankList() {
+        //HashMap<String, String> userMap = new HashMap<String, String>();
         userMap.put("Trust Fall", "Caye");
         userMap.put("Tattoos Together", "Lauv");
         userMap.put("my song", "Charles Goose");
@@ -13,7 +14,11 @@ public class HashMapImport {
         // get the keys by using the keySet method
         Set<String> keys = userMap.keySet();
         for(String key : keys) {
-            System.out.println(key+" "+userMap.get(key));
+            System.out.println(key);
         }
     }
+	public String getSong(String m) {
+		String n=userMap.get(m);
+		return n;
+	}
 }
