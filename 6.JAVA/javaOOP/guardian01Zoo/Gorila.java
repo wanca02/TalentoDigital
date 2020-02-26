@@ -1,6 +1,9 @@
 package guardian01Zoo;
 
 public class Gorila extends Mammal {
+	public void energyInit() {
+		energyLevel=50;
+	}
 	public void throwSomething() {
 		System.out.println("He lanzado algo...");
 		energyLevel-=5;
