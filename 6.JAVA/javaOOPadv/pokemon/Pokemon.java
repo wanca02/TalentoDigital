@@ -1,10 +1,13 @@
 package pokemon;
 
+import java.util.ArrayList;
+
 public class Pokemon {
 	private String name;
 	private int health;
 	private String type;
 	private static int count=0;
+	private static ArrayList<Pokemon> n = new ArrayList<Pokemon>();
 	
 	public Pokemon() {}
 	public Pokemon(String name, int health, String type) {
@@ -15,8 +18,12 @@ public class Pokemon {
 	}
 	public void attackPokemon(Pokemon pokemon) {
 		pokemon.setHealth(pokemon.getHealth() - 10);
+		System.out.println(this.name+" atacó a "+pokemon.name);
 	}
 	
+	public void addPokeList() {
+		n.add(this);
+	}
 	
 	
 	public String getName() {
@@ -42,6 +49,9 @@ public class Pokemon {
 	}
 	public static void setCount(int count) {
 		Pokemon.count = count;
+	}
+	public static ArrayList<Pokemon> getListPoke() {
+		return n;
 	}
 
 }
