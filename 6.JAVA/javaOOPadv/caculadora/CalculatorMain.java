@@ -6,11 +6,17 @@ public class CalculatorMain {
 		// TODO Auto-generated method stub
 		Calculator c = new Calculator();
 		
-		c.setN1(10.5);
-		c.setOperador("-");
-		c.setN2(5.2);
-		c.performOperation();
-		System.out.println(c.getResultado());
+		
+		c.performOperation(10.5);
+		c.performOperation("+");
+		c.performOperation(5.2);
+		c.performOperation("*");
+		c.performOperation(10);
+		c.performOperation("-");
+		c.performOperation(2);
+		c.performOperation("=");
+		
+		
 	}
 
 }
