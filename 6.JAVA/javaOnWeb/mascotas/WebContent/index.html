@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Crea tu pet</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+	  <div class="row">
+	  	<div class="col-2">
+	  		<select class="form-control">
+		  	  <option value="Perro">Perro</option>
+		  	  <option value="Gato">gato</option>
+		  	</select>
+	  	</div>
+	  </div>
+	  <div class="row">
+	  	<div class="col">
+	  		<form action="Dogs" method="get">
+	  		<fieldset>
+  			  <legend>Crea un Perro:</legend>
+			  <div class="form-group row">
+			    <label for="staticName" class="col-sm-2 col-form-label">Nombre</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" name="name" aria-describedby="Nombre" placeholder="Nombre mascota">
+			    </div>
+			  </div>
+			  <div class="form-group row">
+			    <label for="staticRaza" class="col-sm-2 col-form-label">Raza</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" name="breed" placeholder="La raza">
+			    </div>
+			  </div>
+			  <div class="form-group row">
+			    <label for="staticPeso" class="col-sm-2 col-form-label">Peso</label>
+			    <div class="col-sm-10">
+			      <input type="number" class="form-control" name="weight" placeholder="Su peso">
+			    </div>
+			  </div>
+			  <button type="submit" class="btn btn-primary mb-2">Crea tu Mastoca</button>
+			  </fieldset>
+			</form>
+	  	</div>
+	  	<div class="col">
+	  		<form action="Cats" method="get">
+	  		  <fieldset>
+	  		  <legend>Crea un Gato:</legend>
+			  <div class="form-group row">
+			    <label for="staticName" class="col-sm-2 col-form-label">Nombre</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" name="name" aria-describedby="Nombre" placeholder="Nombre mascota">
+			    </div>
+			  </div>
+			  <div class="form-group row">
+			    <label for="staticRaza" class="col-sm-2 col-form-label">Raza</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" name="breed" placeholder="La raza">
+			    </div>
+			  </div>
+			  <div class="form-group row">
+			    <label for="staticPeso" class="col-sm-2 col-form-label">Peso</label>
+			    <div class="col-sm-10">
+			      <input type="number" class="form-control" name="weight" placeholder="Su peso">
+			    </div>
+			  </div>
+			  <button type="submit" class="btn btn-primary mb-2">Crea tu Mastoca</button>
+			  </fieldset>
+			</form>
+	  	</div>
+	  </div>
+	</div>
+</body>
+<footer>
+  <script src="./resources/js/script.js"></script>
+</footer>
+</html>
