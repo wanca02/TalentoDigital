@@ -18,7 +18,7 @@ public class Animal {
 		this.name=name;
 	}
 	public String getBreed() {
-		return this.name;
+		return this.breed;
 	}
 	public void setBreed(String breed) {
 		this.breed=breed;

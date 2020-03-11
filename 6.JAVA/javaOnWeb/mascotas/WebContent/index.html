@@ -17,9 +17,10 @@
 	  </div>
 	  <div class="row">
 	  	<div class="col">
-	  		<form action="Dogs" method="get">
+	  		<form action="Home" method="get">
 	  		<fieldset>
   			  <legend>Crea un Perro:</legend>
+  			  <input type="hidden" name="action" value="Dogs" />
 			  <div class="form-group row">
 			    <label for="staticName" class="col-sm-2 col-form-label">Nombre</label>
 			    <div class="col-sm-10">
@@ -43,9 +44,10 @@
 			</form>
 	  	</div>
 	  	<div class="col">
-	  		<form action="Cats" method="get">
+	  		<form action="Home" method="get">
 	  		  <fieldset>
 	  		  <legend>Crea un Gato:</legend>
+	  		  <input type="hidden" name="action" value="Cats" />
 			  <div class="form-group row">
 			    <label for="staticName" class="col-sm-2 col-form-label">Nombre</label>
 			    <div class="col-sm-10">
@@ -71,7 +73,4 @@
 	  </div>
 	</div>
 </body>
-<footer>
-  <script src="./resources/js/script.js"></script>
-</footer>
 </html>
