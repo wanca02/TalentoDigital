@@ -1,0 +1,9 @@
+@charset "ISO-8859-1";
+.mg{
+	margin: 0 auto;
+}
+.border{
+	border: 2px solid black;
+	border-radius: 7px;
+	padding: 20px;
+}
