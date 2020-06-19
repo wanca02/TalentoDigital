@@ -1,7 +1,7 @@
 package bank;
 
 public class BankAccount {
-	private String numero_cuenta;
+	private String numero_cuenta="";
 	private double saldo_cuenta_corriente;
 	private double saldo_cuenta_ahorro;
 	
@@ -10,7 +10,9 @@ public class BankAccount {
 	
 	private String n_r_cuenta() {
 		String n="";
-		for(int i=0;i<11;i++) n+=Integer.toString((int) Math.floor(Math.random()*9));
+		if(numero_cuenta.equals("")) {
+			for(int i=0;i<11;i++) n+=Integer.toString((int) Math.floor(Math.random()*9));
+		}
 		return n; 
 	}
 	
@@ -59,7 +61,7 @@ public class BankAccount {
 	public void estado_cuentas() {
 		System.out.println("Cuenta ahorro: "+this.getSaldo_cuenta_ahorro());
 		System.out.println("Cuenta corriente: "+this.getSaldo_cuenta_corriente());
-		System.out.println("Dinero acumulado: "+cDinero);
+		System.out.println("Dinero acumulado: "+cDinero+nCuentas+" "+numero_cuenta);
 	}
 }
 
