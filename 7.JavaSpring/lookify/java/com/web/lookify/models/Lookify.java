@@ -25,7 +25,7 @@ public class Lookify {
 	@Size(min = 2, max = 50)
   private String artist;
 	@Size(min = 1)
-  private String rating;
+  private Integer rating;
 	
 //Esto no permitirá que el campo createdAt sea modificado después de su creación.
   @Column(updatable=false)
@@ -40,7 +40,7 @@ public class Lookify {
 			Long id, 
 			String title, 
 			String artist,
-			String rating) {
+			Integer rating) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -72,11 +72,11 @@ public class Lookify {
 		this.artist = artist;
 	}
 
-	public String getRating() {
+	public Integer getRating() {
 		return rating;
 	}
 
-	public void setRating(String rating) {
+	public void setRating(int rating) {
 		this.rating = rating;
 	}
 

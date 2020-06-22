@@ -16,7 +16,7 @@
 				<div class="col-10">
 					<div class="jumbotron center">
 						<h1>Welcome to Lookify</h1>
-						<a href="dashboard">Star Looking!</a>
+						<a href="dashboard">Start Looking!</a>
 					</div>
 				</div>
 			</div>

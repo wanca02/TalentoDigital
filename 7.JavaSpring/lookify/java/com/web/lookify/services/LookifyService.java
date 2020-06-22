@@ -32,6 +32,18 @@ public class LookifyService {
 	      return null;
 	  }
 	}
+	
+	public List<Lookify> findsongs(String search){
+		return repository.findByArtistContaining(search);
+	}
+	
+	public List<Lookify> findtop(Integer less){
+		return repository.findByRatingLessThanEqual(less);
+	}
+	
+	public void delete(Long id) {
+		repository.deleteById(id);
+	}
 }
 
 

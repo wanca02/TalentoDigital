@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.web.lookify.models.Lookify;
 import com.web.lookify.services.LookifyService;
@@ -50,6 +51,26 @@ public class LookifyController {
 		Lookify _song= service.findid(id);
 		model.addAttribute("song",_song);
 		return "show.jsp";
+	}
+	
+	@RequestMapping(value="search", method=RequestMethod.GET)
+	public String search(Model model, @Valid @RequestParam(value="search") String search) {
+		List<Lookify> songs=service.findsongs(search);
+		model.addAttribute("songs", songs);
+		return "search.jsp";
+	}
+	
+	@RequestMapping("search/topTen")
+	public String Top(Model model) {
+		List<Lookify> songs=service.findtop(10);
+		model.addAttribute("songs", songs);
+		return "top.jsp";
+	}
+	
+	@RequestMapping(value="del", method=RequestMethod.DELETE)
+	public String delete(@Valid @RequestParam(value="id") Long id) {
+		service.delete(id);
+		return "redirect:/dashboard";
 	}
 }
 
