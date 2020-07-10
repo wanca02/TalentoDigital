@@ -39,9 +39,9 @@ public class PersonController {
 	@RequestMapping("persons/{id}")
 	public String Show(Model model, @PathVariable("id") Long id) {
 		Person p = service.findOnePerson(id);
-		License l = service.findOneLicense(id);
+		//License l = service.findOneLicense(id);
 		model.addAttribute("person",p);
-		model.addAttribute("license",l);
+		//model.addAttribute("license",l);
 		return "show.jsp";
 	}
 }
