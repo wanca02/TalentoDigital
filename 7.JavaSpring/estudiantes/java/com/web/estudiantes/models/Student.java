@@ -5,6 +5,7 @@ import java.sql.Date;
 import javax.persistence.*;
 
 
+
 @Entity
 @Table(name="students")
 public class Student {
@@ -20,15 +21,12 @@ public class Student {
   @OneToOne(mappedBy="student", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
   private Contact contact;
   
+  @OneToOne(mappedBy="student", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+  private DormStudent dormstudent;
+  
 	public Student() {
 	}
 	public Student(String firstName, String lastName, Integer age) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.age = age;
-	}
-	public Student(Long id, String firstName, String lastName, Integer age) {
-		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
