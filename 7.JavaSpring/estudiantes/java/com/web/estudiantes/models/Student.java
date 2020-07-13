@@ -1,10 +1,9 @@
 package com.web.estudiantes.models;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.*;
-
-
 
 @Entity
 @Table(name="students")
@@ -23,6 +22,14 @@ public class Student {
   
   @OneToOne(mappedBy="student", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
   private DormStudent dormstudent;
+  
+  @ManyToMany(fetch = FetchType.LAZY)
+  @JoinTable(
+      name = "classes_students", 
+      joinColumns = @JoinColumn(name = "student_id"), 
+      inverseJoinColumns = @JoinColumn(name = "class_id")
+    )
+  private List<_Class> classes;
   
 	public Student() {
 	}
@@ -73,6 +80,18 @@ public class Student {
 	}
 	public void setContact(Contact contact) {
 		this.contact = contact;
+	}
+	public DormStudent getDormstudent() {
+		return dormstudent;
+	}
+	public void setDormstudent(DormStudent dormstudent) {
+		this.dormstudent = dormstudent;
+	}
+	public List<_Class> getClasses() {
+		return classes;
+	}
+	public void setClasses(List<_Class> classes) {
+		this.classes = classes;
 	}
 }
 

@@ -65,6 +65,15 @@ public class DormController {
 		return "redirect:/dorms/"+Did;
 	}
 	
+	@RequestMapping(value="/dorms/delDormStudent", method=RequestMethod.DELETE)
+	public String DeleteDormStudent(@Valid
+			@RequestParam("studentId") Long Sid,
+			@RequestParam("dormId") Long Did) {
+		DormStudent ds = service.findOneDormStudent(Did, Sid);
+		service.deleteDS(ds.getId());
+		return "redirect:/dorms/"+Did;
+	}
+	
 	@RequestMapping("/dorms/404error")
 	public String NotFound() {
 		return "notfound.jsp";

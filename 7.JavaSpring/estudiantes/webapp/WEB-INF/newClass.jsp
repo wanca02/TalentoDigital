@@ -5,9 +5,10 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>New DormStudent!</title>
+		<title>New Class!</title>
 		<!-- CSS only -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<link rel="stylesheet" href="../css/style.css">
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -18,7 +19,7 @@
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav mr-auto">
 		      <li class="nav-item active">
-		        <a class="nav-link" href="/dorms/new">Home <span class="sr-only">(current)</span></a>
+		        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 		      </li>
 		      <li class="nav-item">
 		        <a class="nav-link" href="../students/new">Ingresar Estudiante</a>
@@ -27,22 +28,23 @@
 		  </div>
 		</nav>
 		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h1>Clases!!</h1>
+				</div>
+			</div>
 			<div class="row justify-content-center">
 				<div class="col-5">
-					<form action="addDormStudent" method="post">
+					<form:form action="addClass" method="post" modelAttribute="class">
 				    <div class="form-group row">
-			        <label class="col-sm-4 col-form-label">Students: </label>
+			        <form:label class="col-sm-4 col-form-label" path="name">Name: </form:label>
+			        <form:errors path="name"/>
 			        <div class="col-sm-8">
-			        	<select class="form-control" name="studentId">
-			        		<c:forEach items="${ students }" var="student">
-			        			<option value="${ student.id }"><c:out value="${ student.firstName }"></c:out> <c:out value="${ student.lastName }"></c:out></option>
-			        		</c:forEach>
-			        	</select>
+			        	<form:input type="text" class="form-control" path="name"/>
 			        </div>
 				    </div>
-				    <input type="hidden" name="dormId" value="<c:out value="${ dormId }"></c:out>">
 				    <input type="submit" class="btn btn-primary" value="Create"/>
-					</form>
+					</form:form>
 				</div>
 			</div>
 			<div class="row mt-5 justify-content-center">
@@ -57,18 +59,11 @@
 					  </thead>
 					  <tbody>
 					  	<%int cc=1; %>
-						  <c:forEach items="${ dorm.dormstudent }" var="dorm">
+						  <c:forEach items="${ classes }" var="class">
 							  <tr>
 						      <th scope="row"><%=cc++ %></th>
-						      <td><c:out value="${ dorm.student.firstName }"></c:out></td>
-						      <td>
-						      	<form action="delDormStudent" method="post">
-									    <input type="hidden" name="_method" value="DELETE">
-									    <input type="hidden" name="studentId" value="<c:out value="${ dorm.student.id }"></c:out>">
-									    <input type="hidden" name="dormId" value="<c:out value="${ dorm.dorm.id }"></c:out>">
-									    <button type="submit" class="btn btn-outline-danger" value="Delete">Delete</button>
-										</form>
-						      </td>
+						      <td><c:out value="${ class.name }"></c:out></td>
+						      <td><a href="<c:out value="${ class.id }"></c:out>">Ver</a></td>
 						    </tr>
 						  </c:forEach>
 					  </tbody>
@@ -78,6 +73,10 @@
 		</div>
 	</body>
 </html>
+
+
+
+
 
 
 

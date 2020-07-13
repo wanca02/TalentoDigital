@@ -8,6 +8,7 @@
 		<title>New Student!</title>
 		<!-- CSS only -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<link rel="stylesheet" href="../css/style.css">
 	</head>
 	<body>
 		<div class="container mt-5">
@@ -42,6 +43,29 @@
 				    </div>
 				    <input type="submit" class="btn btn-primary" value="Create"/>
 					</form:form>
+				</div>
+			</div>
+			<div class="row mt-5 justify-content-center">
+				<div class="col-8">
+					<table class="table table-hover">
+					  <thead>
+					    <tr>
+					      <th scope="col">#</th>
+					      <th scope="col">Name</th>
+					      <th scope="col">Action</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					  	<%int cc=1; %>
+						  <c:forEach items="${ students }" var="student">
+							  <tr>
+						      <th scope="row"><%=cc++ %></th>
+						      <td><c:out value="${ student.firstName }"></c:out> <c:out value="${ student.lastName }"></c:out></td>
+						      <td><a href="<c:out value="${ student.id }"></c:out>">Ver</a></td>
+						    </tr>
+						  </c:forEach>
+					  </tbody>
+					</table>
 				</div>
 			</div>
 		</div>

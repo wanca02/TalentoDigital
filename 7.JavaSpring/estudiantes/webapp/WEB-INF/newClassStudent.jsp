@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>New DormStudent!</title>
+		<title>New ClassStudent!</title>
 		<!-- CSS only -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	</head>
@@ -21,27 +21,37 @@
 		        <a class="nav-link" href="/dorms/new">Home <span class="sr-only">(current)</span></a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="../students/new">Ingresar Estudiante</a>
+		        <a class="nav-link" href="/students/new">Ver Estudiantes</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="../classes/new">Crear nueva Clase</a>
 		      </li>
 		    </ul>
 		  </div>
 		</nav>
 		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h1>
+						<c:out value="${ _student.firstName }"></c:out> <c:out value="${ _student.lastName }"></c:out>
+					</h1>
+				</div>
+			</div>
 			<div class="row justify-content-center">
 				<div class="col-5">
-					<form action="addDormStudent" method="post">
+					<form action="addClassStudent" method="post">
 				    <div class="form-group row">
-			        <label class="col-sm-4 col-form-label">Students: </label>
+			        <label class="col-sm-4 col-form-label">Classes: </label>
 			        <div class="col-sm-8">
-			        	<select class="form-control" name="studentId">
-			        		<c:forEach items="${ students }" var="student">
-			        			<option value="${ student.id }"><c:out value="${ student.firstName }"></c:out> <c:out value="${ student.lastName }"></c:out></option>
+			        	<select class="form-control" name="classId">
+			        		<c:forEach items="${ classes }" var="class">
+			        			<option value="${ class.id }"><c:out value="${ class.name }"></c:out></option>
 			        		</c:forEach>
 			        	</select>
 			        </div>
 				    </div>
-				    <input type="hidden" name="dormId" value="<c:out value="${ dormId }"></c:out>">
-				    <input type="submit" class="btn btn-primary" value="Create"/>
+				    <input type="hidden" name="studentId" value="<c:out value="${ _student.id }"></c:out>">
+				    <input type="submit" class="btn btn-primary" value="Add"/>
 					</form>
 				</div>
 			</div>
@@ -57,15 +67,15 @@
 					  </thead>
 					  <tbody>
 					  	<%int cc=1; %>
-						  <c:forEach items="${ dorm.dormstudent }" var="dorm">
+						  <c:forEach items="${ _student.classes }" var="class">
 							  <tr>
 						      <th scope="row"><%=cc++ %></th>
-						      <td><c:out value="${ dorm.student.firstName }"></c:out></td>
+						      <td><c:out value="${ class.name }"></c:out></td>
 						      <td>
-						      	<form action="delDormStudent" method="post">
+						      	<form action="delClassStudent" method="post">
 									    <input type="hidden" name="_method" value="DELETE">
-									    <input type="hidden" name="studentId" value="<c:out value="${ dorm.student.id }"></c:out>">
-									    <input type="hidden" name="dormId" value="<c:out value="${ dorm.dorm.id }"></c:out>">
+									    <input type="hidden" name="classId" value="<c:out value="${ class.id }"></c:out>">
+									    <input type="hidden" name="studentId" value="<c:out value="${ _student.id }"></c:out>">
 									    <button type="submit" class="btn btn-outline-danger" value="Delete">Delete</button>
 										</form>
 						      </td>

@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>New DormStudent!</title>
+		<title>New ClassStudent!</title>
 		<!-- CSS only -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	</head>
@@ -21,29 +21,20 @@
 		        <a class="nav-link" href="/dorms/new">Home <span class="sr-only">(current)</span></a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="../students/new">Ingresar Estudiante</a>
+		        <a class="nav-link" href="../students/new">Crear Estudiante</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="/classes/new">Ingresar Estudiante a Clase</a>
 		      </li>
 		    </ul>
 		  </div>
 		</nav>
 		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-5">
-					<form action="addDormStudent" method="post">
-				    <div class="form-group row">
-			        <label class="col-sm-4 col-form-label">Students: </label>
-			        <div class="col-sm-8">
-			        	<select class="form-control" name="studentId">
-			        		<c:forEach items="${ students }" var="student">
-			        			<option value="${ student.id }"><c:out value="${ student.firstName }"></c:out> <c:out value="${ student.lastName }"></c:out></option>
-			        		</c:forEach>
-			        	</select>
-			        </div>
-				    </div>
-				    <input type="hidden" name="dormId" value="<c:out value="${ dormId }"></c:out>">
-				    <input type="submit" class="btn btn-primary" value="Create"/>
-					</form>
-				</div>
+			<div class="row">
+				<h1><c:out value="${ class.name }"></c:out></h1>
+			</div>
+			<div class="row">
+				<h6>Estudiantes inscritos en esta clase:</h6>
 			</div>
 			<div class="row mt-5 justify-content-center">
 				<div class="col-8">
@@ -57,18 +48,10 @@
 					  </thead>
 					  <tbody>
 					  	<%int cc=1; %>
-						  <c:forEach items="${ dorm.dormstudent }" var="dorm">
+						  <c:forEach items="${ class.students }" var="student">
 							  <tr>
 						      <th scope="row"><%=cc++ %></th>
-						      <td><c:out value="${ dorm.student.firstName }"></c:out></td>
-						      <td>
-						      	<form action="delDormStudent" method="post">
-									    <input type="hidden" name="_method" value="DELETE">
-									    <input type="hidden" name="studentId" value="<c:out value="${ dorm.student.id }"></c:out>">
-									    <input type="hidden" name="dormId" value="<c:out value="${ dorm.dorm.id }"></c:out>">
-									    <button type="submit" class="btn btn-outline-danger" value="Delete">Delete</button>
-										</form>
-						      </td>
+						      <td><c:out value="${ student.firstName }"></c:out> <c:out value="${ student.lastName }"></c:out></td>
 						    </tr>
 						  </c:forEach>
 					  </tbody>
