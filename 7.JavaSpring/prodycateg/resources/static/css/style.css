@@ -1,0 +1,15 @@
+@charset "ISO-8859-1";
+
+tbody {
+    display:block;
+    max-height:200px;
+    overflow-y:auto;
+}
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+thead {
+    width: calc( 100% - 1em )
+} 
