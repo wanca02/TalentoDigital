@@ -3,6 +3,7 @@ package com.web.dojooverflow.models;
 import java.sql.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.Entity;
@@ -28,7 +29,7 @@ public class Question {
   @OneToMany(mappedBy="question", fetch = FetchType.LAZY)
   private List<Answer> answers;
   
-  @ManyToMany(fetch = FetchType.LAZY)
+  @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
   @JoinTable(
       name = "tags_questions", 
       joinColumns = @JoinColumn(name = "question_id"), 
@@ -37,9 +38,10 @@ public class Question {
   private List<Tag> tags;
   
   public Question() {}
-  public Question(String question) {
+  public Question(String question, List<Tag> tags) {
 		super();
 		this.question = question;
+		this.tags = tags;
 	}
 	
 	public Long getId() {

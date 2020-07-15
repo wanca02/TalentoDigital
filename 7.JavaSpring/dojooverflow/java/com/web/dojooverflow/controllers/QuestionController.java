@@ -1,5 +1,7 @@
 package com.web.dojooverflow.controllers;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -14,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.web.dojooverflow.models.Answer;
 import com.web.dojooverflow.models.Question;
 import com.web.dojooverflow.models.Tag;
-import com.web.dojooverflow.models.TagQuestion;
 import com.web.dojooverflow.services.MainService;
 
 @Controller
@@ -52,16 +53,19 @@ public class QuestionController {
 	public String IndexQuestion() {
 		return "newQuestion.jsp";
 	}
-	@RequestMapping(value="/questions/addQuestionTag", method=RequestMethod.POST)
+	@RequestMapping(value="/questions/addquestiontag", method=RequestMethod.POST)
 	public String FormQuestion(@Valid
 			@RequestParam("question") String question,
 			@RequestParam("tag") String tag) {
-		Tag t = new Tag(tag);
-		Question q = new Question(question);
-		TagQuestion tq = new TagQuestion(q,t);
-		service.create(t);
+		String[] str = tag.split("\\,",-1);
+		//System.out.println(Arrays.toString(str));
+		List<Tag> T = new ArrayList<Tag>();
+		for(String s : str) {
+			service.create(new Tag(s));
+			T.add(new Tag(s));
+		}
+		Question q = new Question(question, T);
 		service.create(q);
-		service.create(tq);
 		return "redirect:/questions/new";
 	}
 }

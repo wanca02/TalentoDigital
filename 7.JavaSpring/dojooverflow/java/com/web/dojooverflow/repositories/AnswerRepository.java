@@ -9,5 +9,5 @@ import com.web.dojooverflow.models.Answer;
 
 @Repository
 public interface AnswerRepository extends CrudRepository<Answer,Long>{
-List<Answer> findAll();
+	List<Answer> findAll();
 }

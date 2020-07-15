@@ -3,6 +3,7 @@ package com.web.dojooverflow.models;
 import java.sql.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.Entity;
@@ -25,7 +26,7 @@ public class Tag {
   private Date createdAt;
 	private Date updatedAt;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
   @JoinTable(
       name = "tags_questions", 
       joinColumns = @JoinColumn(name = "tag_id"), 
